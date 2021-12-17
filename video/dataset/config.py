@@ -10,7 +10,7 @@ def get_config(name):
         config['num_classes'] = 51
     elif name.upper() == 'KINETICS':
         config['num_classes'] = 400
-    elif name.upper() == 'Hollywood2':
+    elif name.upper() == 'HOLLYWOOD2':
         config['num_classes'] = 12
     else:
         logging.error("Configs for dataset '{}'' not found".format(name))
