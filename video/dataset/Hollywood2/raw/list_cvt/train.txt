@@ -1,4 +1,4 @@
-﻿0	0	AnswerPhone/actioncliptrain00009.avi
+0	0	AnswerPhone/actioncliptrain00009.avi
 1	0	AnswerPhone/actioncliptrain00050.avi
 2	0	AnswerPhone/actioncliptrain00065.avi
 3	0	AnswerPhone/actioncliptrain00068.avi

@@ -1,4 +1,4 @@
-﻿0	0	AnswerPhone/actioncliptest00083.avi
+0	0	AnswerPhone/actioncliptest00083.avi
 1	0	AnswerPhone/actioncliptest00098.avi
 2	0	AnswerPhone/actioncliptest00127.avi
 3	0	AnswerPhone/actioncliptest00132.avi
