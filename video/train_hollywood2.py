@@ -98,7 +98,7 @@ if __name__ == "__main__":
                  json.dumps(vars(args), indent=4, sort_keys=True))
 
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpus
-    # assert torch.cuda.is_available(), "CUDA is not available"
+    assert torch.cuda.is_available(), "CUDA is not available"
     torch.manual_seed(args.random_seed)
     torch.cuda.manual_seed(args.random_seed)
 
