@@ -4,11 +4,9 @@ Modified by Yuan Li to video hashing
 """
 import os
 import json
-import socket
 import logging
 import argparse
 
-import torch
 import torch.nn.parallel
 import torch.distributed as dist
 
@@ -17,13 +15,10 @@ from train_model import train_model
 from network.symbol_builder import get_symbol
 
 parser = argparse.ArgumentParser(description="PyTorch Video Hashing")
-# debug
 parser.add_argument('--debug-mode', type=bool, default=True,
                     help="print all setting for debugging.")
-# hash
 parser.add_argument('--hash_bit',type=int,  default=64,
                     help="define the length of hash bits.")
-# io
 parser.add_argument('--dataset', default='MSR_VTT', choices=['UCF101', 'HMDB51', 'Kinetics', 'MSR_VTT'],
                     help="path to dataset")
 parser.add_argument('--clip-length', default=16,
@@ -38,26 +33,15 @@ parser.add_argument('--model-dir', type=str, default="./exps/models",
                     help="set logging file.")
 parser.add_argument('--log-file', type=str, default="",
                     help="set logging file.")
-# device
 parser.add_argument('--gpus', type=str, default="0,1,2,3,4,5,6,7",
                     help="define gpu id")
-# algorithm
 parser.add_argument('--network', type=str, default='MFNet_3D',
                     choices=['MFNet_3D'],
                     help="chose the base network")
-# initialization with priority (the next step will overwrite the previous step)
-# - step 1: random initialize
-# - step 2: load the 2D pretrained model if `pretrained_2d' is True
-# - step 3: load the 3D pretrained model if `pretrained_3d' is defined
-# - step 4: resume if `resume_epoch' >= 0
 parser.add_argument('--pretrained_2d', type=bool, default=True,
                     help="load default 2D pretrained model.")
-parser.add_argument('--pretrained_3d', type=str, 
-                    default='./network/pretrained/MFNet3D_UCF-101_Split-1_96.3.pth',
-                    help="load default 3D pretrained model.")
 parser.add_argument('--resume-epoch', type=int, default=-1,
                     help="resume train")
-# optimization
 parser.add_argument('--fine-tune', type=bool, default=True,
                     help="apply different learning rate for different layers")
 parser.add_argument('--batch-size', type=int, default=64,
@@ -74,7 +58,6 @@ parser.add_argument('--end-epoch', type=int, default=50,
                     help="maxmium number of training epoch")
 parser.add_argument('--random-seed', type=int, default=1,
                     help='random seed (default: 1)')
-# distributed training
 parser.add_argument('--backend', default='nccl', type=str, choices=['gloo', 'nccl'],
                     help='Name of the backend to use')
 parser.add_argument('--world-size', default=1, type=int,
@@ -91,7 +74,7 @@ def autofill(args):
             args.log_file = "./exps/logs/{}_at-{}.log".format(args.task_name, socket.gethostname())
         else:
             args.log_file = ".{}_at-{}.log".format(args.task_name, socket.gethostname())
-    # fixed
+
     args.model_prefix = os.path.join(args.model_dir, args.task_name)
     return args
 
@@ -151,8 +134,6 @@ if __name__ == "__main__":
     kwargs.update(dataset_cfg)
     kwargs.update({'input_conf': input_conf})
     kwargs.update(vars(args))
-    #args.hash_bit
-    #Hash_center = torch.load('dataset/UCF101/raw/64_ucf_101_class.pkl')
     print(f'-----------------------dataset/MSR_VTT/raw/{args.hash_bit}_msrvtt_20_class.pkl-----------------')
     Hash_center = torch.load(f'dataset/MSR_VTT/raw/{args.hash_bit}_msrvtt_20_class.pkl')
     train_model(Hash_center, sym_net=net, **kwargs)
