@@ -6,6 +6,7 @@ import os
 import json
 import logging
 import argparse
+import socket
 
 import torch.nn.parallel
 import torch.distributed as dist
