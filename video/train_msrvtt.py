@@ -153,7 +153,7 @@ if __name__ == "__main__":
     kwargs.update(vars(args))
     #args.hash_bit
     #Hash_center = torch.load('dataset/UCF101/raw/64_ucf_101_class.pkl')
-    print(f'-----------------------dataset/UCF101/raw/{args.hash_bit}_ucf_101_class.pkl-----------------')
-    Hash_center = torch.load(f'dataset/UCF101/raw/{args.hash_bit}_ucf_101_class.pkl')
+    print(f'-----------------------dataset/MSR_VTT/raw/{args.hash_bit}_msrvtt_20_class.pkl-----------------')
+    Hash_center = torch.load(f'dataset/MSR_VTT/raw/{args.hash_bit}_msrvtt_20_class.pkl')
     train_model(Hash_center, sym_net=net, **kwargs)
 
