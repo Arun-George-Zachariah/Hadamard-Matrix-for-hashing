@@ -23,7 +23,7 @@ if __name__ == "__main__":
     for index, row in df.iterrows():
         if not pd.isnull(row['FileName']):
             file_name = row['FileName']
-            category = row['Genre']
+            category = row['Genre'].lower()
 
             if row['Train 1?'] == 0:
                 if category in test_category_dict:
