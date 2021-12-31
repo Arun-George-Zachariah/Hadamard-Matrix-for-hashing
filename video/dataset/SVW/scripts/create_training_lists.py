@@ -3,7 +3,7 @@
 
 # To download the dataset: wget https://www.cse.msu.edu/computervision/SVW.zip && unzip SVW.zip
 # To create the data directories: mkdir -p /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/raw/data && cd /mydata/Videos && mv * /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/raw/data
-# Remove spaces from files: cd  /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/raw/scrips && bash rename.sh
+# Remove spaces from files: cd /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/scripts && bash rename.sh
 
 import pandas as pd
 
