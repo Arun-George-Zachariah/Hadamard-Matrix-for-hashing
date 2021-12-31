@@ -4,7 +4,7 @@ import pandas as pd
 import os
 import shutil
 
-ANN_FILE = "SVW.csv"
+ANN_FILE = "/mydata/SVW.csv"
 DATA_DIR = "/mydata/SVW"
 
 if __name__ == "__main__":
@@ -26,16 +26,16 @@ if __name__ == "__main__":
                 if category in test_category_dict:
                     file_lst = test_category_dict[category]
                     file_lst.append(file_name)
-                    test_category_dict[category] = file
+                    test_category_dict[category] = file_name
                 else:
-                    test_category_dict[category] = [file]
+                    test_category_dict[category] = [file_name]
             else:
                 if category in train_category_dict:
                     file_lst = train_category_dict[category]
                     file_lst.append(file_name)
-                    train_category_dict[category] = file
+                    train_category_dict[category] = file_name
                 else:
-                    train_category_dict[category] = [file]
+                    train_category_dict[category] = [file_name]
 
     # Creating the data directories
     for category in train_category_dict:
