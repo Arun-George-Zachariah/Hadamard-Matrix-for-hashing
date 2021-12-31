@@ -38,14 +38,14 @@ if __name__ == "__main__":
                     train_category_dict[category] = [file_name]
 
     # Creating the list files and moving the video to the data directories
-    with open("../raw/list_cvt/train.txt" + ".txt", 'a+') as f:
+    with open("../raw/list_cvt/train.txt", 'a+') as f:
         counter = 0;
         for index, category in enumerate(train_category_dict):
             for file_name in train_category_dict[category]:
                 f.write(str(index) + "	" + str(counter) + "	" + category + "/" + file_name + "\n")
                 counter += 1
 
-    with open("../raw/list_cvt/test.txt" + ".txt", 'a+') as f:
+    with open("../raw/list_cvt/test.txt", 'a+') as f:
         counter = 0;
         for index, category in enumerate(test_category_dict):
             for files in test_category_dict[category]:
