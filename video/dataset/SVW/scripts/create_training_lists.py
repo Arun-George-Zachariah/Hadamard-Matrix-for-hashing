@@ -1,8 +1,6 @@
 # pandas==1.1.5
 
 import pandas as pd
-import os
-import shutil
 
 ANN_FILE = "/mydata/SVW.csv"
 DATA_DIR = "/mydata/SVW"

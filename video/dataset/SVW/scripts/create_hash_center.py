@@ -3,7 +3,7 @@ import torch
 import numpy as np
 
 if __name__ == "__main__":
-    num_class = 12
+    num_class = 30
     d_vals = [16, 32, 64]
 
     for d in d_vals:
