@@ -5,9 +5,9 @@ import os
 import shutil
 
 # Constants
-ANN_FILE = "/mydata/MSR_VTT_Dataset/train_val_videodatainfo.json"
-OUT_FILE = "train.txt"
-VIDEO_DIR = "/mydata/MSR_VTT_Dataset/TrainValVideo"
+ANN_FILE = "/mydata/MSR_VTT_Dataset/test_videodatainfo.json"
+OUT_FILE = "test.txt"
+VIDEO_DIR = "/mydata/MSR_VTT_Dataset/TestVideo"
 DEST_DIR = "/mydata/MSR_VTT_Dataset/data"
 
 if __name__ == '__main__':
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     # Iterating over the categories
     for category in sorted(category_dict):
         # Creating the directory for the respective category
-        if not os.path.exists("Category_" + str(category)):
+        if not os.path.exists(DEST_DIR + "/Category_" + str(category)):
             os.makedirs(DEST_DIR + "/Category_" + str(category))
 
         # Obtaining all videos belonging to the category
