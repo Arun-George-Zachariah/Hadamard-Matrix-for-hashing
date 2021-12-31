@@ -17,7 +17,7 @@ if __name__ == "__main__":
             hash_targets = torch.from_numpy(ha_2d[0:num_class]).float()
             print('hash centers shape: {}'.format(hash_targets.shape))
 
-        file_name = str(d) + '_hollywood2_' + str(num_class) + '_class.pkl'
+        file_name = str(d) + '_svw_' + str(num_class) + '_class.pkl'
         file_dir = '../raw/' + file_name
         f = open(file_dir, "wb")
         torch.save(hash_targets, f)
