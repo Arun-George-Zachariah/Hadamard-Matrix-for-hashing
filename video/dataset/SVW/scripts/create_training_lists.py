@@ -1,4 +1,8 @@
+# Requirments
 # pandas==1.1.5
+
+# To download the dataset: wget https://www.cse.msu.edu/computervision/SVW.zip && unzip SVW.zip
+# To create the data directories: mkdir -p /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/raw/data && cd /mydata/Videos && mv * /mydata/CSQ/Hadamard-Matrix-for-hashing/video/dataset/SVW/raw/data
 
 import pandas as pd
 
