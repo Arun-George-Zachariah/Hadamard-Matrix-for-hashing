@@ -27,10 +27,10 @@ def main(args):
         total_epoch = 90
 
     elif args.data_name == 'coco':
-        train_list = 'data/coco/train.txt'
-        test_list = 'data/coco/test.txt'
+        train_list = 'data/revised_coco/train.txt'
+        test_list = 'data/revised_coco/test.txt'
         #true_hash = 'data/coco/coco_ha80_class.pkl'
-        true_hash = 'data/coco/hash_centers/' + str(args.hash_bit) + '_coco_80_class.pkl'
+        true_hash = 'data/revised_coco/hash_centers/' + str(args.hash_bit) + '_coco_80_class.pkl'
         data_imbalance = 1
         two_loss_epoch = -1
         total_epoch = 90
